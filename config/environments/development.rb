@@ -1,5 +1,17 @@
 Depot::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+    address:        "smtp.live.com",
+    port:           25,
+    domain:         "live.com",
+    authentication: "plain",
+    user_name:      "mr.scott.davidson",
+    password:       "Hockey!!",
+    enable_starttls_auto: true
+
+  }
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
@@ -26,4 +38,7 @@ Depot::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
+  # Set Mail deliver method
+
 end
